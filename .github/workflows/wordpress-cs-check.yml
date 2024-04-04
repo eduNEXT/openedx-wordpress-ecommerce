@@ -34,5 +34,3 @@ jobs:
 
       - name: Run plugin check
         uses: swissspidy/wp-plugin-check-action@v1
-        with:
-          checks: 'plugin_readme'
