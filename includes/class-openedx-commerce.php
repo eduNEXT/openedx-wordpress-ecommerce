@@ -76,7 +76,7 @@ class Openedx_Commerce {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		$this->define_plugin_settings_hooks();
-		$this->define_enqueue_scripts();
+		$this->loader->add_action('admin_enqueue_scripts', $this, 'enqueue_custom_scripts');
 	}
 
 	/**
@@ -270,12 +270,12 @@ class Openedx_Commerce {
 	 * @since    1.11.0
 	 * @access   private
 	 */
-	private function define_enqueue_scripts() {
-		wp_register_script( 'product-type-script', plugin_dir_url( __FILE__ ) . '../admin/js/product-type.js', array(), $this->get_version(), true );
-		wp_enqueue_script( 'product-type-script' );
-
-		wp_register_script( 'course-id-restriction-script', plugin_dir_url( __FILE__ ) . '../admin/js/course-id-restriction.js', array(), $this->get_version(), true );
-		wp_enqueue_script( 'course-id-restriction-script' );
+	private function enqueue_custom_scripts() {
+		$plugin_js_path = plugin_dir_url(__FILE__) . '../admin/js/';
+		$version = $this->get_version();
+	
+		wp_enqueue_script('product-type-script', $plugin_js_path . 'product-type.js', array(), $version, true);
+		wp_enqueue_script('course-id-restriction-script', $plugin_js_path . 'course-id-restriction.js', array(), $version, true);
 	}
 
 	/**
