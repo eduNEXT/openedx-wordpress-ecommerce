@@ -29,7 +29,7 @@ jobs:
         plugin-repository: https://helixteamhub.cloud/edunext/projects/openedx-commerce/repositories/subversion/openedx-commerce
         svn-username: ${{ secrets.SVN_HELIX_USERNAME }}
         svn-password: ${{ secrets.SVN_HELIX_PASSWORD }}
-        plugin-zip-folder: openedx-commerce
         commit-message: ${{ inputs.message }}
         assets-directory: ../docs/source/_images/plugin-page
         working-directory: openedx-commerce
+        plugin-zip: ''
