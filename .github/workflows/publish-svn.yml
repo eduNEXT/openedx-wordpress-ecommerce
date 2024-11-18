@@ -31,4 +31,5 @@ jobs:
         svn-password: ${{ secrets.SVN_PASSWORD }}
         plugin-zip-folder: openedx-commerce
         commit-message: Release ${{ inputs.version }}
-        assets-directory: docs/source/_images/plugin-page
+        assets-directory: ../docs/source/_images/plugin-page
+        working-directory: openedx-commerce
