@@ -20,12 +20,6 @@ DIRECTORY_SRC="$GITHUB_ACTION_PATH/src"
 
 . "$DIRECTORY_SRC/working-directory.sh" 
 . "$DIRECTORY_SRC/plugin-version.sh" 
-. "$DIRECTORY_SRC/plugin-slug.sh" 
-
-# Infer raw plugin slug
-PLUGIN_SLUG=$(pluginSlug "$INPUT_PLUGIN_REPOSITORY")
-
-export PLUGIN_SLUG
 
 # Normalize environment
 INPUT_PLUGIN_VERSION=$(pluginVersion "$INPUT_PLUGIN_VERSION")
